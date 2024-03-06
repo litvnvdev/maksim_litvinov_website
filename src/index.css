@@ -1,5 +1,8 @@
 :root {
-  /* .poppins-light {
+  /* 
+  ==========Font Family====
+  
+  .poppins-light {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-style: normal;
@@ -22,12 +25,11 @@
     font-weight: 600;
     font-style: normal;
   } */
-  
+
   font-family: "Poppins", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
   /*TODO: Theme changer and variables for css*/
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
@@ -38,11 +40,28 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-*{
-  
-    margin: 0;
-    padding: 0;
+* {
+  scrollbar-color: #8e8e8e #fff;
+  scrollbar-width: thin;
+  margin: 0;
+  padding: 0;
+}
+html{
+  scroll-behavior: smooth;
 }
 body {
+  position: relative;
   min-height: 100vh;
+}
+ul li {
+  list-style: none;
+}
+button{
+  outline: none;
+}
+.theme-icon{
+  cursor: pointer;
+  width: 1.2em;
+  height: 1.2em;
+  margin-right:60px ;
 }
