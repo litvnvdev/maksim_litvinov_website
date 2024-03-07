@@ -49,10 +49,7 @@
 html{
   scroll-behavior: smooth;
 }
-body {
-  position: relative;
-  min-height: 100vh;
-}
+
 ul li {
   list-style: none;
 }

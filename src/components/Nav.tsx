@@ -5,21 +5,21 @@ type NavProps = {
 };
 
 const NavMenu = styled.nav`
+  color: #f9f9f9;
+  position: fixed;
+  z-index: 200;
   font-size: 1.1rem;
   width: 100%;
-  z-index: 200;
-  position: fixed;
-  padding: 20px 0 20px 40px;
-  height: auto;
+  padding: 20px 0;
   top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
-  background: ${({ theme }) => theme.backgorund};
+  background: #2d2e32;
 `;
 const List = styled.ul`
-  padding-right: 20px;
+  padding-right: 1rem;
   max-width: 50vw;
   display: flex;
   gap: 2rem;
@@ -33,7 +33,7 @@ const Nav = (props: NavProps) => {
   const navLinks: string[] = ["Home", "About", "Portfolio", "Contact"];
   return (
     <NavMenu>
-      <h3>Litvinov.dev</h3>
+      <h3 style={{ paddingLeft: "3rem" }}>Litvinov.dev</h3>
       <List>
         {navLinks.map((el, id) => (
           <NavLink key={el + id}>{el}</NavLink>
