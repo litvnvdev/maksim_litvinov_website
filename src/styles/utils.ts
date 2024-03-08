@@ -6,6 +6,15 @@ type StyleProps = {
   width?: string;
 };
 
+export const Wrapper = styled.section<StyleProps>`
+  position: relative;
+  background: ${({ theme }) => theme.background};
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+`;
 export const Container = styled.div<StyleProps>`
   position: relative;
   display: flex;
@@ -16,7 +25,7 @@ export const Container = styled.div<StyleProps>`
   padding-right: 0.5rem;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 15rem;
+  padding-top: 5rem;
 `;
 export const Content = styled.div<StyleProps>`
   margin: 0 auto;

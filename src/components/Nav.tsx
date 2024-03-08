@@ -5,7 +5,6 @@ type NavProps = {
 };
 
 const NavMenu = styled.nav`
-  color: #f9f9f9;
   position: fixed;
   z-index: 200;
   font-size: 1.1rem;
@@ -16,7 +15,7 @@ const NavMenu = styled.nav`
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
-  background: #2d2e32;
+  /* background: #2d2e32; */
 `;
 const List = styled.ul`
   padding-right: 1rem;
