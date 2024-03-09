@@ -32,7 +32,7 @@ const Nav = (props: NavProps) => {
   const navLinks: string[] = ["Home", "About", "Portfolio", "Contact"];
   return (
     <NavMenu>
-      <h3 style={{ paddingLeft: "3rem" }}>Litvinov.dev</h3>
+      <h3 style={{ paddingLeft: "3rem", cursor: 'pointer' }}>Litvinov.dev</h3>
       <List>
         {navLinks.map((el, id) => (
           <NavLink key={el + id}>{el}</NavLink>
