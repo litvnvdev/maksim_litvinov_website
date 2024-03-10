@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { FaLinkedin, FaGithubSquare, FaHtml5, FaCss3Alt } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { SiTypescript } from "react-icons/si";
@@ -16,15 +16,38 @@ interface HeroProps {
   border?: string;
 }
 
+const borderAnimation = keyframes`
+from{
+  border-top-left-radius: 90%;
+  border-top-right-radius: 85%;
+  border-bottom-left-radius:70%;
+  border-bottom-right-radius: 70%;
+}
+50%{
+    border-top-left-radius: 65%;
+    border-top-right-radius: 75%;
+    border-bottom-left-radius: 65%;
+    border-bottom-right-radius: 70%;
+}
+
+
+  to{
+  border-top-left-radius: 90%;
+  border-top-right-radius: 85%;
+  border-bottom-left-radius:70%;
+  border-bottom-right-radius: 70%;
+  }
+`;
+
 const HeroTextBlock = styled.div`
   line-height: 1.6;
   display: flex;
   font-size: 1.1rem;
   flex-direction: column;
   max-width: 550px;
-@media (min-width:768px ) and (max-width:980px){
-  max-width:500px;
-}
+  @media (min-width: 768px) and (max-width: 980px) {
+    max-width: 500px;
+  }
 `;
 const HeroTitle = styled.h1`
   font-weight: 600;
@@ -66,7 +89,7 @@ const HeroText = styled.p<HeroProps>`
     border-bottom: ${(props) => props.border};
     border-right: none;
   }
-  
+
   @media (min-width: 56px) and (max-width: 424px) {
     border-bottom: ${(props) => props.border};
     border-right: none;
@@ -82,6 +105,12 @@ const HeroImg = styled.div`
   border-radius: 50%;
   width: 25rem;
   height: 25rem;
+
+  animation-name: ${borderAnimation};
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
 
   @media (min-width: 980px) and (max-width: 1440px) {
     width: 15rem;
