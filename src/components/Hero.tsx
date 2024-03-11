@@ -5,15 +5,11 @@ import { SiTypescript } from "react-icons/si";
 import { FaReact } from "react-icons/fa6";
 import { TbBrandNextjs } from "react-icons/tb";
 
-import { Container, Content, Wrapper } from "../styles/utils";
+import { Container, Content, Wrapper, Title, Text } from "../styles/utils";
 import MeImg2 from "../assets/images/me2.jpg";
 
-interface HeroProps {
-  mt?: string;
-  pr?: string;
-  pl?: string;
-  maxwidth?: string;
-  border?: string;
+interface HeroProps{
+  maxwidth?:string;
 }
 
 const borderAnimation = keyframes`
@@ -49,53 +45,7 @@ const HeroTextBlock = styled.div`
     max-width: 500px;
   }
 `;
-const HeroTitle = styled.h1`
-  font-weight: 600;
-  font-size: 3.8rem;
-  line-height: 1.1;
 
-  @media (min-width: 980px) and (max-width: 1440px) {
-    font-size: 3rem;
-  }
-  @media (min-width: 768px) and (max-width: 980px) {
-    font-size: 2.1rem;
-  }
-  @media (min-width: 425px) and (max-width: 767px) {
-    text-align: center;
-    font-size: 2rem;
-  }
-  @media (min-width: 56px) and (max-width: 424px) {
-    text-align: center;
-    font-size: 1.2rem;
-  }
-`;
-const HeroText = styled.p<HeroProps>`
-  max-width: ${(props) => props.maxwidth};
-  margin-top: ${(props) => props.mt};
-  color: ${({ theme }) => theme.pText};
-  padding-left: ${(props) => props.pl};
-  padding-right: ${(props) => props.pr};
-  border-right: ${(props) => props.border} ${({ theme }) => theme.pText};
-
-  @media (min-width: 980px) and (max-width: 1440px) {
-    font-size: 1rem;
-  }
-  @media (min-width: 768px) and (max-width: 980px) {
-    font-size: 1rem;
-  }
-  @media (min-width: 425px) and (max-width: 767px) {
-    text-align: center;
-    font-size: 1.1rem;
-    border-bottom: ${(props) => props.border};
-    border-right: none;
-  }
-
-  @media (min-width: 56px) and (max-width: 424px) {
-    border-bottom: ${(props) => props.border};
-    border-right: none;
-    font-size: 0.9rem;
-  }
-`;
 const HeroImg = styled.div`
   background-image: url(${MeImg2});
   background-position: 40%;
@@ -169,11 +119,11 @@ const Hero = () => {
       <Container direction="column">
         <Content gap="15rem" width="107rem">
           <HeroTextBlock>
-            <HeroTitle>Front-End React Developer</HeroTitle>
-            <HeroText mt="1rem">
+            <Title>Front-End React Developer</Title>
+            <Text mt="1rem">
               Hi! I'm Maksim Litvinov. A passionate Front-end React Developer
               based in Krasnodar, Russia. 📍
-            </HeroText>
+            </Text>
             <IconBlock maxwidth="5rem">
               <FaLinkedin size={35} style={{ cursor: "pointer" }} />
               <FaGithubSquare size={35} style={{ cursor: "pointer" }} />
@@ -182,9 +132,9 @@ const Hero = () => {
           <HeroImg />
         </Content>
         <TechBlock>
-          <HeroText border="2px solid" pr="1rem" pl="1rem" maxwidth="10rem">
+          <Text border="2px solid" pr="1rem" pl="1rem" maxwidth="10rem">
             <strong>Tech Stack</strong>
-          </HeroText>
+          </Text>
           <IconBlock>
             <FaHtml5 size={50} />
             <FaCss3Alt size={50} />

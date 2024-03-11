@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { FaMoon } from "react-icons/fa";
 
-import { Nav, Hero } from "./components";
+import { Nav, Hero, About } from "./components";
 import { GlobalStyles } from "./styles/GlobalStyles";
 import { lightTheme, darkTheme } from "./styles/Theme";
 
@@ -20,6 +20,7 @@ function App() {
         </Nav>
         <GlobalStyles />
         <Hero />
+        <About />
       </>
     </ThemeProvider>
   );

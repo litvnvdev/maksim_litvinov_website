@@ -4,6 +4,11 @@ type StyleProps = {
   direction?: string;
   gap?: string;
   width?: string;
+  mt?: string;
+  pr?: string;
+  pl?: string;
+  maxwidth?: string;
+  border?: string;
 };
 
 export const Wrapper = styled.section<StyleProps>`
@@ -15,7 +20,7 @@ export const Wrapper = styled.section<StyleProps>`
   padding-top: 5rem;
   padding-bottom: 5rem;
 
-  @media (min-width:56px) and (max-width:424px){
+  @media (min-width: 56px) and (max-width: 424px) {
     height: 100vh;
   }
 `;
@@ -54,8 +59,59 @@ export const Content = styled.div<StyleProps>`
     gap: 1rem;
   }
   @media (min-width: 56px) and (max-width: 424px) {
-      flex-direction: column-reverse;
-      gap: 0.5rem;
-    }
-  
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+  }
+`;
+
+export const Title = styled.h1`
+  font-weight: 600;
+  font-size: 3.8rem;
+  line-height: 1.1;
+
+  @media (min-width: 980px) and (max-width: 1440px) {
+    font-size: 3rem;
+  }
+  @media (min-width: 768px) and (max-width: 980px) {
+    font-size: 2.1rem;
+  }
+  @media (min-width: 425px) and (max-width: 767px) {
+    text-align: center;
+    font-size: 2rem;
+  }
+  @media (min-width: 56px) and (max-width: 424px) {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+`;
+export const SubTitle = styled.h3`
+font-size: 1.4rem;
+font-weight: 600;
+`
+export const Text = styled.p<StyleProps>`
+  max-width: ${(props) => props.maxwidth};
+  margin-top: ${(props) => props.mt};
+  color: ${({ theme }) => theme.pText};
+  padding-left: ${(props) => props.pl};
+  padding-right: ${(props) => props.pr};
+  border-right: ${(props) => props.border} ${({ theme }) => theme.pText};
+
+  @media (min-width: 980px) and (max-width: 1440px) {
+    font-size: 1rem;
+  }
+  @media (min-width: 768px) and (max-width: 980px) {
+    font-size: 1rem;
+  }
+  @media (min-width: 425px) and (max-width: 767px) {
+    text-align: center;
+    font-size: 1.1rem;
+    border-bottom: ${(props) => props.border};
+    border-right: none;
+  }
+
+  @media (min-width: 56px) and (max-width: 424px) {
+    border-bottom: ${(props) => props.border};
+    border-right: none;
+    font-size: 0.9rem;
+  }
 `;
