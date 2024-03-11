@@ -17,25 +17,25 @@ interface HeroProps {
 }
 
 const borderAnimation = keyframes`
-from{
-  border-top-left-radius: 90%;
+0%{
+  border-top-left-radius: 65% 40%;
   border-top-right-radius: 85%;
   border-bottom-left-radius:70%;
-  border-bottom-right-radius: 70%;
+  border-bottom-right-radius: 65% 40%;
 }
 50%{
-    border-top-left-radius: 65%;
-    border-top-right-radius: 75%;
-    border-bottom-left-radius: 65%;
-    border-bottom-right-radius: 70%;
+    border-top-left-radius: 55%;
+    border-top-right-radius: 65% 45%;
+    border-bottom-left-radius: 65% 45%;
+    border-bottom-right-radius: 55%;
 }
 
 
-  to{
-  border-top-left-radius: 90%;
+  100%{
+    border-top-left-radius: 65% 40%;
   border-top-right-radius: 85%;
   border-bottom-left-radius:70%;
-  border-bottom-right-radius: 70%;
+  border-bottom-right-radius: 65% 40%;
   }
 `;
 
@@ -107,10 +107,9 @@ const HeroImg = styled.div`
   height: 25rem;
 
   animation-name: ${borderAnimation};
-  animation-duration: 5s;
+  animation-duration: 7s;
   animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
 
   @media (min-width: 980px) and (max-width: 1440px) {
     width: 15rem;
