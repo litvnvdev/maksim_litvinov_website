@@ -9,6 +9,14 @@ type StyleProps = {
   pl?: string;
   maxwidth?: string;
   border?: string;
+  xl_pt?:string;
+  l_pt?:string;
+  m_pt?:string;
+  sm_pt?:string;
+  media_pb?:string;
+  media_direction?:string;
+  sm_text_align?:string;
+  md_text_align?:string;
 };
 
 export const Wrapper = styled.section<StyleProps>`
@@ -17,11 +25,19 @@ export const Wrapper = styled.section<StyleProps>`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-
-  @media (min-width: 56px) and (max-width: 424px) {
-    height: 100vh;
+  padding-top: 10rem;
+  padding-bottom: 6rem;
+  
+  
+  
+  @media (min-width:768px) and (max-width:980px){
+    padding-top:${(props)=>props.l_pt} ;
+  }
+  @media (min-width: 425px) and (max-width:767px){
+    padding-top: ${(props)=>props.m_pt};
+  }
+  @media (min-width: 56px) and (max-width:424px){
+    padding-top: ${(props)=>props.sm_pt};
   }
 `;
 export const Container = styled.div<StyleProps>`
@@ -35,6 +51,11 @@ export const Container = styled.div<StyleProps>`
   margin-left: auto;
   margin-right: auto;
   padding-top: 5rem;
+  
+  @media (min-width: 56px) and (max-width:1440px){
+    padding-top: ${(props)=>props.sm_pt};
+  }
+
 `;
 export const Content = styled.div<StyleProps>`
   margin: 0 auto;
@@ -49,17 +70,17 @@ export const Content = styled.div<StyleProps>`
   gap: ${(props) => props.gap};
 
   @media (min-width: 768px) and (max-width: 1440px) {
-    gap: 7rem;
+    gap: 3rem;
   }
   @media (min-width: 768px) and (max-width: 980px) {
     gap: 1rem;
   }
   @media (min-width: 425px) and (max-width: 767px) {
-    flex-direction: column-reverse;
+    flex-direction: ${(props)=>props.media_direction};
     gap: 1rem;
   }
   @media (min-width: 56px) and (max-width: 424px) {
-    flex-direction: column-reverse;
+    flex-direction: ${(props)=>props.media_direction};
     gap: 0.5rem;
   }
 `;
@@ -102,9 +123,9 @@ export const Text = styled.p<StyleProps>`
   @media (min-width: 768px) and (max-width: 980px) {
     font-size: 1rem;
   }
-  @media (min-width: 425px) and (max-width: 767px) {
-    text-align: center;
-    font-size: 1.1rem;
+  @media (min-width: 375px) and (max-width: 767px) {
+    text-align: ${(props)=>props.md_text_align};
+    font-size: 1rem;
     border-bottom: ${(props) => props.border};
     border-right: none;
   }
@@ -113,5 +134,6 @@ export const Text = styled.p<StyleProps>`
     border-bottom: ${(props) => props.border};
     border-right: none;
     font-size: 0.9rem;
+    text-align: ${(props)=>props.sm_text_align};
   }
 `;
