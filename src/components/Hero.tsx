@@ -5,7 +5,7 @@ import { SiTypescript } from "react-icons/si";
 import { FaReact } from "react-icons/fa6";
 import { TbBrandNextjs } from "react-icons/tb";
 
-import { Container, Content, Wrapper, Title, Text } from "../styles/utils";
+import { Container, Content, Wrapper, Title, Text } from "../styles/styles";
 import MeImg2 from "../assets/images/me2.jpg";
 
 interface HeroProps{
@@ -115,12 +115,12 @@ const TechBlock = styled.div`
 
 const Hero = () => {
   return (
-    <Wrapper>
-      <Container direction="column">
-        <Content gap="15rem" width="107rem">
+    <Wrapper xl_pt="10rem" m_pt='5rem' l_pt="10rem" sm_pt="3rem">
+      <Container direction="column" xl_pt='5rem'>
+        <Content gap="15rem" width="107rem" media_direction="column-reverse">
           <HeroTextBlock>
             <Title>Front-End React Developer</Title>
-            <Text mt="1rem">
+            <Text mt="1rem" sm_text_align="center">
               Hi! I'm Maksim Litvinov. A passionate Front-end React Developer
               based in Krasnodar, Russia. 📍
             </Text>
