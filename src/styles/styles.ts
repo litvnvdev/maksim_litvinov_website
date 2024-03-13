@@ -17,6 +17,9 @@ type StyleProps = {
   media_direction?:string;
   sm_text_align?:string;
   md_text_align?:string;
+  margin_top_center?:string;
+  align_items?:string;
+  sm_padding?:string;
 };
 
 export const Wrapper = styled.section<StyleProps>`
@@ -58,7 +61,7 @@ export const Container = styled.div<StyleProps>`
 
 `;
 export const Content = styled.div<StyleProps>`
-  margin: 0 auto;
+  margin: ${(props)=>props.margin_top_center || '0 auto' }  ;
   padding: 0 1rem;
   max-width: ${(props) => props.width};
   position: relative;
@@ -66,7 +69,7 @@ export const Content = styled.div<StyleProps>`
   background: ${({ theme }) => theme.background};
   flex-direction: ${(props) => props.direction};
   justify-content: center;
-  align-items: center;
+  align-items: ${(props)=>props.align_items || 'center'};
   gap: ${(props) => props.gap};
 
   @media (min-width: 768px) and (max-width: 1440px) {
@@ -82,6 +85,7 @@ export const Content = styled.div<StyleProps>`
   @media (min-width: 56px) and (max-width: 424px) {
     flex-direction: ${(props)=>props.media_direction};
     gap: 0.5rem;
+    padding: ${(props)=>props.sm_padding};
   }
 `;
 
