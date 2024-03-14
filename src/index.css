@@ -45,20 +45,38 @@
   margin: 0;
   padding: 0;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
 
 ul li {
   list-style: none;
 }
-button{
+button {
   outline: none;
 }
-.theme-icon{
+.theme-icon {
+  transition: 0.3s;
   cursor: pointer;
   width: 1.2rem;
   height: 1.2rem;
-  margin-right:60px ;
+  margin-right: 3rem;
   margin-top: 0.25rem;
+}
+.theme-icon:hover {
+  color: #919191;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .theme-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+@media (min-width: 56px) and (max-width: 768px) {
+  .theme-icon {
+    margin: 0;
+    width: 1rem;
+    height: 1rem;
+  }
 }
