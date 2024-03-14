@@ -31,6 +31,11 @@ const PortfolioContainer = styled.div`
   gap: 4rem;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: 56px) and (max-width: 768px) {
+    margin-top: 3rem;
+    gap: 2rem;
+  }
 `;
 
 const Protfolio = () => {
@@ -41,7 +46,7 @@ const Protfolio = () => {
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa, non? 1",
       img: MockImg_1,
-      direction: 'row'
+      direction: "row",
     },
     {
       id: 2,
@@ -49,7 +54,7 @@ const Protfolio = () => {
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa, non? 2 ",
       img: MockImg_2,
-      direction: 'row-reverse'
+      direction: "row-reverse",
     },
     {
       id: 3,
@@ -57,7 +62,7 @@ const Protfolio = () => {
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa, non? 3",
       img: MockImg_3,
-      direction: 'row'
+      direction: "row",
     },
     {
       id: 4,
@@ -65,17 +70,17 @@ const Protfolio = () => {
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa, non? 3",
       img: MockImg_4,
-      direction: 'row-reverse'
+      direction: "row-reverse",
     },
   ];
   return (
-    <Wrapper>
+    <Wrapper m_pt="2rem" l_pt="9rem" sm_pt="1rem">
       <Container>
-        <Content direction="column" sm_padding='0'>
+        <Content direction="column" sm_padding="0">
           <SubTitle>Portfolio</SubTitle>
-          <Text>Each Project is unique peace of development</Text>
+          <Text sm_text_align='center'>Each Project is unique peace of development</Text>
           <PortfolioContainer>
-            {projectData.map((el, id) => (
+            {projectData.map((el) => (
               <ProjectCard key={el.id} {...el} />
             ))}
           </PortfolioContainer>

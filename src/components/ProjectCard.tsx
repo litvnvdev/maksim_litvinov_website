@@ -15,7 +15,7 @@ const ProjectTextContainer = styled.div`
   flex-direction: column;
   max-width: 30rem;
 
-  @media (min-width: 425px) and (max-width: 767px) {
+  @media (min-width: 56px) and (max-width: 767px) {
     align-items: center;
     max-width: 25rem;
     padding: 0 2rem;
@@ -32,9 +32,12 @@ const ProjectImg = styled.img`
   height: auto;
   border-radius: 20% 5%;
 
-  @media (min-width: 325px) and (max-width: 767px) {
+  @media (min-width: 375px) and (max-width: 768px) {
     margin: 0 auto;
     width: 20rem;
+  }
+  @media (min-width: 56px) and (max-width: 375px) {
+    width: 18rem;
   }
 `;
 
