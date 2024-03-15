@@ -80,3 +80,8 @@ button {
     height: 1rem;
   }
 }
+
+.mobile-icon{
+  padding-top: 0.7rem;
+  font-size: 2rem;
+}
