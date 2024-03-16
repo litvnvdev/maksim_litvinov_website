@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Wrapper, Container, Content, Text, SubTitle } from "../styles/styles";
+import { Wrapper, Container, Content, Text, SubTitle} from "../styles/styles";
 import meAtWork from "../assets/images/meAtWork2.png"; //TODO: fix large size all images
 
 const AboutContainer = styled.div`
