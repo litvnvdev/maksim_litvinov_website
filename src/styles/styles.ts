@@ -21,6 +21,9 @@ type StyleProps = {
   align_items?: string;
   sm_padding?: string;
   font_size?: string;
+  md_font?: string;
+  sm_font?: string;
+  l_font?: string;
 };
 
 export const Wrapper = styled.section<StyleProps>`
@@ -91,26 +94,30 @@ export const Title = styled.h1<StyleProps>`
   font-weight: 600;
   font-size: ${(props) => props.font_size || "3.8rem"};
   line-height: 1.1;
-  margin-top: ${(props)=>props.mt};
+  margin-top: ${(props) => props.mt};
 
   @media (min-width: 980px) and (max-width: 1440px) {
-    font-size: 3rem;
+    font-size: ${(props) => props.l_font || "3rem"};
   }
   @media (min-width: 768px) and (max-width: 980px) {
-    font-size: 2.1rem;
+    font-size: ${(props) => props.l_font || "2.1rem"};
   }
   @media (min-width: 425px) and (max-width: 767px) {
     text-align: center;
-    font-size: 2rem;
+    font-size: ${(props) => props.md_font || "2rem"};
   }
   @media (min-width: 56px) and (max-width: 424px) {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: ${(props) => props.sm_font || "1.2rem"};
   }
 `;
-export const SubTitle = styled.h3`
-  font-size: 1.4rem;
+export const SubTitle = styled.h3<StyleProps>`
+  font-size: 1.5rem;
   font-weight: 600;
+
+  @media (min-width: 56px) and (max-width: 490px) {
+    font-size: ${(props) => props.font_size};
+  }
 `;
 export const Text = styled.p<StyleProps>`
   max-width: ${(props) => props.maxwidth};
@@ -136,7 +143,7 @@ export const Text = styled.p<StyleProps>`
   @media (min-width: 56px) and (max-width: 424px) {
     border-bottom: ${(props) => props.border};
     border-right: none;
-    font-size: 0.9rem;
+    font-size: ${(props) => props.font_size || "0.9rem"};
     text-align: ${(props) => props.sm_text_align};
   }
 `;

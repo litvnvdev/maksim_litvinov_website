@@ -36,8 +36,11 @@ const ProjectImg = styled.img`
     margin: 0 auto;
     width: 20rem;
   }
-  @media (min-width: 56px) and (max-width: 375px) {
+  @media (min-width: 325px) and (max-width: 375px) {
     width: 18rem;
+  }
+  @media (min-width: 56px) and (max-width: 325px) {
+    width: 15rem;
   }
 `;
 
