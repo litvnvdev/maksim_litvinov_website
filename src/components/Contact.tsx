@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
-import { FaTelegram } from "react-icons/fa";
+import { FaTelegram, FaLinkedin } from "react-icons/fa";
 
 import {
   Wrapper,
@@ -18,14 +18,14 @@ const Contact = () => {
       <Container sm_pt="4rem">
         <Content direction="column">
           <SubTitle>Contact</SubTitle>
-          <Title font_size="1.4rem" mt="3rem">
+          <Title font_size="1.4rem" md_font="1.25rem" mt="3rem">
             Don't be shy! Hit me up! 👇
           </Title>
           <ContactSection.Container>
             <ContactSection.Content>
               <ContactSection.IconContainer>
                 <FaLocationDot size={35} />
-                <SubTitle>Location</SubTitle>
+                <SubTitle font_size="1rem">Location</SubTitle>
               </ContactSection.IconContainer>
               <Text>Krasnodar, Russia</Text>
             </ContactSection.Content>
@@ -33,7 +33,7 @@ const Contact = () => {
             <ContactSection.Content>
               <ContactSection.IconContainer>
                 <IoIosMail size={35} />
-                <SubTitle>Mail</SubTitle>
+                <SubTitle font_size="1rem">Mail</SubTitle>
               </ContactSection.IconContainer>
               <Text>maximlitvinov.2611@gmail.com</Text>
             </ContactSection.Content>
@@ -41,7 +41,14 @@ const Contact = () => {
             <ContactSection.Content>
               <ContactSection.IconContainer>
                 <FaTelegram size={35} />
-                <SubTitle>Telegram</SubTitle>
+                <SubTitle font_size="1rem">Telegram</SubTitle>
+              </ContactSection.IconContainer>
+              <Text>@maksimlitvinov_v</Text>
+            </ContactSection.Content>
+            <ContactSection.Content>
+              <ContactSection.IconContainer>
+                <FaLinkedin size={35} />
+                <SubTitle font_size="1rem">Linkedin</SubTitle>
               </ContactSection.IconContainer>
               <Text>@maksimlitvinov_v</Text>
             </ContactSection.Content>
@@ -54,9 +61,21 @@ const Contact = () => {
 
 const ContactSection = {
   Container: styled.div`
+    max-width: 100rem;
     margin-top: 3rem;
     display: flex;
     gap: 3rem;
+
+    @media (min-width: 490px) and (max-width: 1024px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    @media (min-width: 56px) and (max-width: 490px) {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
   `,
   Content: styled.div`
     display: flex;

@@ -2,7 +2,7 @@ export const lightTheme = {
   body: "#fff",
   text: "#2d2e32",
   pText: "#555",
-  background: "#f9f9f9",
+  background: "#f9f9f9", //TODO: add one more background for wrapper
   border: "#363636",
   shadow: 'rgba(54, 54, 54, 0.65)',
 };

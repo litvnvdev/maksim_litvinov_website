@@ -1,13 +1,6 @@
 import styled from "styled-components";
 
-import {
-  Wrapper,
-  Container,
-  Content,
-  Title,
-  SubTitle,
-  Text,
-} from "../styles/styles";
+import { Wrapper, Container, Content, Title, SubTitle } from "../styles/styles";
 
 import { ProjectCard } from ".";
 
@@ -78,7 +71,15 @@ const Protfolio = () => {
       <Container>
         <Content direction="column" sm_padding="0">
           <SubTitle>Portfolio</SubTitle>
-          <Text sm_text_align='center'>Each Project is unique peace of development</Text>
+          <Title
+            font_size="1.2rem"
+            l_font="1.3rem"
+            md_font="1.1rem"
+            sm_font="1rem"
+            mt="3rem"
+          >
+            Each Project is unique peace of development
+          </Title>
           <PortfolioContainer>
             {projectData.map((el) => (
               <ProjectCard key={el.id} {...el} />
