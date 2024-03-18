@@ -35,7 +35,11 @@ const Contact = () => {
                 <IoIosMail size={35} />
                 <SubTitle font_size="1rem">Mail</SubTitle>
               </ContactSection.IconContainer>
-              <Text>maximlitvinov.2611@gmail.com</Text>
+              <Text>
+                <ContactSection.Link href="mailto:maximlitvinov.2611@gmail.com">
+                  maximlitvinov.2611@gmail.com
+                </ContactSection.Link>
+              </Text>
             </ContactSection.Content>
 
             <ContactSection.Content>
@@ -43,7 +47,14 @@ const Contact = () => {
                 <FaTelegram size={35} />
                 <SubTitle font_size="1rem">Telegram</SubTitle>
               </ContactSection.IconContainer>
-              <Text>@maksimlitvinov_v</Text>
+              <Text>
+                <ContactSection.Link
+                  href="https://t.me/maksimlitvinov_v"
+                  target="_blank"
+                >
+                  @maksimlitvinov_v
+                </ContactSection.Link>
+              </Text>
             </ContactSection.Content>
             <ContactSection.Content>
               <ContactSection.IconContainer>
@@ -88,6 +99,16 @@ const ContactSection = {
     display: flex;
     gap: 1rem;
     padding-bottom: 0.5rem;
+  `,
+  Link: styled.a`
+    transition: 0.3s;
+    cursor: pointer;
+    color: currentColor;
+    text-decoration: none;
+
+    &:hover {
+      color: ${({theme})=>theme.link};
+    }
   `,
 };
 export default Contact;

@@ -8,8 +8,8 @@ import { TbBrandNextjs } from "react-icons/tb";
 import { Container, Content, Wrapper, Title, Text } from "../styles/styles";
 import MeImg2 from "../assets/images/me2.jpg";
 
-interface HeroProps{
-  maxwidth?:string;
+interface HeroProps {
+  maxwidth?: string;
 }
 
 const borderAnimation = keyframes`
@@ -112,11 +112,21 @@ const TechBlock = styled.div`
     flex-direction: column;
   }
 `;
+const Link = styled.a`
+  transition: 0.3s;
+  cursor: pointer;
+  color: currentColor;
+  text-decoration: none;
+
+  &:hover {
+    color: #919191;
+  }
+`;
 
 const Hero = () => {
   return (
-    <Wrapper xl_pt="10rem" m_pt='5rem' l_pt="10rem" sm_pt="3rem">
-      <Container direction="column" xl_pt='5rem'>
+    <Wrapper xl_pt="10rem" m_pt="5rem" l_pt="10rem" sm_pt="3rem">
+      <Container direction="column" xl_pt="5rem">
         <Content gap="15rem" width="107rem" media_direction="column-reverse">
           <HeroTextBlock>
             <Title>Front-End React Developer</Title>
@@ -125,8 +135,12 @@ const Hero = () => {
               based in Krasnodar, Russia. 📍
             </Text>
             <IconBlock maxwidth="5rem">
-              <FaLinkedin size={35} style={{ cursor: "pointer" }} />
-              <FaGithubSquare size={35} style={{ cursor: "pointer" }} />
+              <Link>
+                <FaLinkedin size={35} style={{ cursor: "pointer" }} />
+              </Link>
+              <Link href="https://github.com/litvnvdev" target="_blank">
+                <FaGithubSquare size={35} style={{ cursor: "pointer" }} />
+              </Link>
             </IconBlock>
           </HeroTextBlock>
           <HeroImg />
