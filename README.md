@@ -2,7 +2,7 @@
 ### Tech Stack: 
 - React 
 - TypeScript
-- StyledComponents
+- Styled-components
   
 ![Tech Stack](https://skillicons.dev/icons?i=react,typescript,styledcomponents)
 
