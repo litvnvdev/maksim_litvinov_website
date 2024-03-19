@@ -2,7 +2,15 @@ import { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { FaMoon } from "react-icons/fa";
 
-import { Nav, Hero, About, Portfolio, MobileNav, Contact } from "./components";
+import {
+  Nav,
+  Hero,
+  About,
+  Portfolio,
+  MobileNav,
+  Contact,
+  Footer,
+} from "./components";
 import { GlobalStyles } from "./styles/GlobalStyles";
 import { lightTheme, darkTheme } from "./styles/Theme";
 
@@ -43,6 +51,7 @@ function App() {
         <About />
         <Portfolio />
         <Contact />
+        <Footer />
       </>
     </ThemeProvider>
   );
