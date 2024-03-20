@@ -31,21 +31,32 @@ const Footer = () => {
 
 const FooterSection = {
   Wrapper: styled.footer`
+    background: ${({ theme }) => theme.footerBg};
+    color: ${({ theme }) => theme.footerText};
     padding: 3rem 0;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    @media (min-width: 56px) and (max-width: 768px) {
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
   `,
   Container: styled.div`
-    color: #fff;
     display: flex;
     justify-content: center;
-    gap: 5rem;
+    gap: 4rem;
+    @media (min-width: 56px) and (max-width: 768px) {
+      gap: 2rem;
+    }
   `,
   Subtitle: styled.h3`
     font-size: 1.1rem;
     font-weight: 500;
+    @media (min-width: 56px) and (max-width: 768px) {
+      font-size: 0.95rem;
+    }
   `,
   Link: styled.a`
     transition: 0.3s;

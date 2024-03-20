@@ -84,9 +84,9 @@ const AboutTextBlock = styled.div`
 
 const About = () => {
   return (
-    <Wrapper m_pt="2rem" l_pt="9rem" sm_pt="1rem">
-      <Container sm_pt="4rem">
-        <Content direction="column">
+    <AboutSection.Wrapper m_pt="2rem" l_pt="9rem" sm_pt="1rem">
+      <AboutSection.Container sm_pt="4rem">
+        <AboutSection.Content direction="column">
           <SubTitle>About Me</SubTitle>
           <AboutContainer>
             <AboutImgBlock />
@@ -105,10 +105,21 @@ const About = () => {
               </Text>
             </AboutTextBlock>
           </AboutContainer>
-        </Content>
-      </Container>
-    </Wrapper>
+        </AboutSection.Content>
+      </AboutSection.Container>
+    </AboutSection.Wrapper>
   );
 };
+const AboutSection = {
+  Wrapper: styled(Wrapper)`
+    background: ${({theme})=>theme.darkerBg};
+  `,
+  Container: styled(Container)`
+    background: ${({theme})=>theme.darkerBg};
+  `,
+  Content: styled(Content)`
+    background:${({theme})=>theme.darkerBg} ;
+  `
+}
 
 export default About;
