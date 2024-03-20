@@ -97,6 +97,14 @@ const MobileMenu = {
     animation-iteration-count: 1;
     animation-timing-function: ease;
     animation-duration: 0.25s;
+    @media (min-height: 550px) and (max-height: 796px) {
+      height: 37dvh;
+      gap: 1.25rem;
+    }
+    @media (max-height: 550px){
+      padding-bottom: 3rem;
+      gap: 1rem;
+    }
   `,
   Items: styled.ul`
     padding-top: 2rem;
@@ -111,6 +119,12 @@ const MobileMenu = {
     animation-iteration-count: 1;
     animation-timing-function: ease;
     animation-duration: 1s;
+    @media (min-height: 550px) and (max-height: 796px) {
+      gap: 1.25rem;
+    }
+    @media (max-height: 550px){
+      gap: 1rem;
+    }
   `,
   Item: styled.li`
     font-weight: 500;
@@ -143,7 +157,7 @@ const MobileMenu = {
     &:hover {
       color: #919191;
     }
-    
+
     animation-name: ${SlideInIconsAnimation};
     animation-iteration-count: 1;
     animation-timing-function: ease;

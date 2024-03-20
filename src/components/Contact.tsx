@@ -14,9 +14,9 @@ import {
 
 const Contact = () => {
   return (
-    <Wrapper m_pt="2rem" l_pt="9rem" sm_pt="1rem">
-      <Container sm_pt="4rem">
-        <Content direction="column">
+    <ContactSection.ExtendWrapper m_pt="2rem" l_pt="9rem" sm_pt="1rem">
+      <ContactSection.ExtendContainer sm_pt="4rem">
+        <ContactSection.ExtendContent direction="column">
           <SubTitle>Contact</SubTitle>
           <Title font_size="1.4rem" md_font="1.25rem" mt="3rem">
             Don't be shy! Hit me up! 👇
@@ -64,14 +64,24 @@ const Contact = () => {
               <Text>@maksimlitvinov_v</Text>
             </ContactSection.Content>
           </ContactSection.Container>
-        </Content>
-      </Container>
-    </Wrapper>
+        </ContactSection.ExtendContent>
+      </ContactSection.ExtendContainer>
+    </ContactSection.ExtendWrapper>
   );
 };
 
 const ContactSection = {
+  ExtendContainer: styled(Container)`
+    background: ${({ theme }) => theme.darkerBg};
+  `,
+  ExtendWrapper: styled(Wrapper)`
+    background: ${({ theme }) => theme.darkerBg};
+  `,
+  ExtendContent: styled(Content)`
+    background: ${({ theme }) => theme.darkerBg};
+  `,
   Container: styled.div`
+    background: ${({ theme }) => theme.darkerBg};
     max-width: 100rem;
     margin-top: 3rem;
     display: flex;
@@ -107,7 +117,7 @@ const ContactSection = {
     text-decoration: none;
 
     &:hover {
-      color: ${({theme})=>theme.link};
+      color: ${({ theme }) => theme.link};
     }
   `,
 };
