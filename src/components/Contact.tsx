@@ -14,7 +14,7 @@ import {
 
 const Contact = () => {
   return (
-    <ContactSection.ExtendWrapper m_pt="2rem" l_pt="9rem" sm_pt="1rem">
+    <ContactSection.ExtendWrapper id='contact' m_pt="2rem" l_pt="9rem" sm_pt="1rem">
       <ContactSection.ExtendContainer sm_pt="4rem">
         <ContactSection.ExtendContent direction="column">
           <SubTitle>Contact</SubTitle>

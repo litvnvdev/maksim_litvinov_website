@@ -1,4 +1,3 @@
-
 import styled from "styled-components";
 
 type NavProps = {
@@ -46,13 +45,28 @@ const NavLink = styled.li`
 const Nav = (props: NavProps) => {
   const navLinks: string[] = ["Home", "About", "Portfolio", "Contact"];
 
+  const goToContact = () => {
+    const element = document.querySelector('#contact')
+    if(element != null ){
+      element.scrollIntoView({
+        behavior:'smooth',
+        block: 'end'
+    })
+  }
+  else{
+    console.log('archor empty scroll');
+    
+  }
+  };
+
   return (
     <NavMenu>
       <h3 style={{ paddingLeft: "3rem", cursor: "pointer" }}>Litvinov.dev</h3>
       <List>
         {navLinks.map((el, id) => (
-          <NavLink key={el + id}>{el}</NavLink>
+          <NavLink onClick={goToContact} key={el + id}>{el}</NavLink>
         ))}
+
         {props.children}
       </List>
     </NavMenu>

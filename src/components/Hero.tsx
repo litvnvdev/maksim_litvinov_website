@@ -125,7 +125,7 @@ const Link = styled.a`
 
 const Hero = () => {
   return (
-    <Wrapper xl_pt="10rem" m_pt="5rem" l_pt="10rem" sm_pt="3rem">
+    <Wrapper id='home' xl_pt="10rem" m_pt="5rem" l_pt="10rem" sm_pt="3rem">
       <Container direction="column" xl_pt="5rem">
         <Content gap="15rem" width="107rem" media_direction="column-reverse">
           <HeroTextBlock>
