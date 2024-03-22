@@ -7,6 +7,7 @@ import { TbBrandNextjs } from "react-icons/tb";
 
 import { Container, Content, Wrapper, Title, Text } from "../styles/styles";
 import MeImg2 from "../assets/images/me2.jpg";
+import Hand from "../assets/images/waving_hand.svg";
 
 interface HeroProps {
   maxwidth?: string;
@@ -40,10 +41,43 @@ const HeroTextBlock = styled.div`
   display: flex;
   font-size: 1.1rem;
   flex-direction: column;
-  max-width: 550px;
-  @media (min-width: 768px) and (max-width: 980px) {
-    max-width: 500px;
+  max-width: 34.375rem;
+  @media (min-width: 424px) and (max-width: 767px) {
+    margin: 0 auto;
+    text-align: center;
   }
+  @media (min-width: 56px) and (max-width: 585px) {
+    margin: 0 auto;
+    text-align: center;
+  }
+`;
+const HeroTitleBlock = styled.div`
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  @media (min-width: 56px) and (max-width: 767px) {
+    margin: 0 auto;
+  }
+`;
+const HeroTitle = styled(Title)`
+  @media (min-width: 768px) and (max-width: 1023px) {
+    font-size: 2rem;
+  }
+  @media (min-width: 56px) and (max-width: 585px) {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  @media (min-width: 375px) and (max-width: 424px) {
+    text-align: center;
+    font-size: 1.25rem;
+  }
+  @media (min-width: 56px) and (max-width: 375px) {
+    width: 14rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+  
 `;
 
 const HeroImg = styled.div`
@@ -122,14 +156,60 @@ const Link = styled.a`
     color: #919191;
   }
 `;
+const WavingHand = styled.img`
+  position: absolute;
+  height: 4rem;
+  width: 4rem;
+  top: 4.25rem;
+  right: 9.5rem;
+  @media (min-width: 1024px) and (max-width: 1440px) {
+    width: 3.5rem;
+    height:3.5rem;
+    top: 3rem;
+    right: 14rem;
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    width: 2.75rem;
+    height: 2.75rem;
+    top: -0.25rem;
+    right: 3.5rem;
+  }
+  @media (min-width: 586px) and (max-width: 767px) {
+    width: 2.5rem;
+    height: 2.5rem;
+    top: -0.15rem;
+    right: -3rem;
+  }
+  @media (min-width: 425px) and (max-width: 585px) {
+    width: 2rem;
+    height: 2rem;
+    top: -0.1rem;
+    right: -2.55rem;
+  }
+  @media (min-width: 375px) and (max-width: 424px) {
+    width: 1.75rem;
+    height: 1.75rem;
+    top: -0.1rem;
+    right: -2rem;
+  }
+  @media (min-width: 56px) and (max-width: 375px) {
+    top: 2.1rem;
+    right: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+`;
 
 const Hero = () => {
   return (
-    <Wrapper id='home' xl_pt="10rem" m_pt="5rem" l_pt="10rem" sm_pt="3rem">
+    <Wrapper id="home" xl_pt="10rem" m_pt="5rem" l_pt="10rem" sm_pt="3rem">
       <Container direction="column" xl_pt="5rem">
         <Content gap="15rem" width="107rem" media_direction="column-reverse">
           <HeroTextBlock>
-            <Title>Front-End React Developer</Title>
+            <HeroTitleBlock>
+              <HeroTitle>Front-End React Developer</HeroTitle>
+              <WavingHand src={Hand} />
+            </HeroTitleBlock>
             <Text mt="1rem" sm_text_align="center">
               Hi! I'm Maksim Litvinov. A passionate Front-end React Developer
               based in Krasnodar, Russia. 📍
