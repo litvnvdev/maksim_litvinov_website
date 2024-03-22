@@ -67,7 +67,7 @@ const Protfolio = () => {
     },
   ];
   return (
-    <Wrapper m_pt="2rem" l_pt="9rem" sm_pt="1rem">
+    <Wrapper id="portfolio" m_pt="2rem" l_pt="9rem" sm_pt="1rem">
       <Container>
         <Content direction="column" sm_padding="0">
           <SubTitle>Portfolio</SubTitle>

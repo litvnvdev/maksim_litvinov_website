@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { HashLink } from "react-router-hash-link";
 
 type NavProps = {
   children: React.ReactNode;
@@ -34,37 +35,56 @@ const List = styled.ul`
   }
 `;
 
-const NavLink = styled.li`
+const NavLink = styled(HashLink)`
   transition: 0.3s;
   cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  color: ${({ theme }) => theme.text};
 
-  &:hover {
+  &:hover,
+  &:focus {
+    color: #919191;
+  }
+  &:active {
     color: #919191;
   }
 `;
 const Nav = (props: NavProps) => {
-  const navLinks: string[] = ["Home", "About", "Portfolio", "Contact"];
+const navLinks = [
+    { name: "Home", id: 1, anchor: "#home" },
+    { name: "About", id: 2, anchor: "#about" },
+    { name: "Portfolio", id: 3, anchor: "#portfolio" },
+    { name: "Contact", id: 4, anchor: "#contact" },
+  ];
 
-  const goToContact = () => {
-    const element = document.querySelector('#contact')
-    if(element != null ){
-      element.scrollIntoView({
-        behavior:'smooth',
-        block: 'end'
-    })
-  }
-  else{
-    console.log('archor empty scroll');
-    
-  }
-  };
+  // ====smooth scroll to anchor only JS====//
+
+  // const goToContact = (anchor:string) => {
+  //   const element = document.querySelector(anchor);
+  //   if (element != null) {
+  //     element.scrollIntoView({
+  //       behavior: "smooth",
+  //       block: "start",
+  //     });
+  //   } else {
+  //     console.log('empty anchor');
+  //     ;
+  //   }
+  // };
 
   return (
     <NavMenu>
-      <h3 style={{ paddingLeft: "3rem", cursor: "pointer" }}>Litvinov.dev</h3>
+      <h3 style={{ paddingLeft: "3rem", cursor: "pointer" }}>
+        <NavLink smooth to="#home">
+          Litvinov.dev
+        </NavLink >
+      </h3>
       <List>
-        {navLinks.map((el, id) => (
-          <NavLink onClick={goToContact} key={el + id}>{el}</NavLink>
+        {navLinks.map((el) => (
+          <NavLink smooth to={el.anchor} key={el.id}>
+              {el.name}
+          </NavLink>
         ))}
 
         {props.children}
@@ -72,5 +92,4 @@ const Nav = (props: NavProps) => {
     </NavMenu>
   );
 };
-
 export default Nav;

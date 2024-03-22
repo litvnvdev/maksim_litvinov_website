@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ThemeProvider } from "styled-components";
-import { FaMoon } from "react-icons/fa";
+import { BsMoonStarsFill, BsFillSunFill } from "react-icons/bs";
+
 
 import {
   Nav,
@@ -38,11 +39,11 @@ function App() {
       <>
         {isMobile ? (
           <MobileNav>
-            <FaMoon className="theme-icon" onClick={handleTheme} />
+            { theme === 'light' ? <BsMoonStarsFill className="theme-icon" onClick={handleTheme} /> : <BsFillSunFill  className="theme-icon" onClick={handleTheme} />}
           </MobileNav>
         ) : (
           <Nav>
-            <FaMoon className="theme-icon" onClick={handleTheme} />
+            { theme === 'light' ? <BsMoonStarsFill className="theme-icon" onClick={handleTheme} /> : <BsFillSunFill  className="theme-icon" onClick={handleTheme} />}
           </Nav>
         )}
 

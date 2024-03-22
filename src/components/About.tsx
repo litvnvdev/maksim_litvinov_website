@@ -84,7 +84,7 @@ const AboutTextBlock = styled.div`
 
 const About = () => {
   return (
-    <AboutSection.Wrapper m_pt="2rem" l_pt="9rem" sm_pt="1rem">
+    <AboutSection.Wrapper id='about' m_pt="2rem" l_pt="9rem" sm_pt="1rem">
       <AboutSection.Container sm_pt="4rem">
         <AboutSection.Content direction="column">
           <SubTitle>About Me</SubTitle>

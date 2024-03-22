@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { HashLink } from "react-router-hash-link";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { useState } from "react";
 
@@ -13,10 +14,17 @@ const MobileNav = (props: MobileProps) => {
   const handleBurger = () => {
     setToggleBurger((prev) => !prev);
   };
-  const menuItems = ["Home", "About", "Portfolio", "Contact"];
+  const menuItems = [
+    { name: "Home", id: 1, anchor: "#home" },
+    { name: "About", id: 2, anchor: "#about" },
+    { name: "Portfolio", id: 3, anchor: "#portfolio" },
+    { name: "Contact", id: 4, anchor: "#contact" },
+  ];
   return (
     <MobileMenu.Wrapper>
-      <MobileMenu.Title>Litvinov.dev</MobileMenu.Title>
+      <MobileMenu.Title smooth to="#home">
+        Litvinov.dev
+      </MobileMenu.Title>
       <MobileMenu.HamburgerButton onClick={handleBurger}>
         {toggleBurger ? (
           <MobileMenu.SvgCloseMenuIcon />
@@ -28,7 +36,14 @@ const MobileNav = (props: MobileProps) => {
         <MobileMenu.Container>
           <MobileMenu.Items>
             {menuItems.map((el) => (
-              <MobileMenu.Item key={el}>{el}</MobileMenu.Item>
+              <MobileMenu.Item
+                onClick={() => setToggleBurger(false)}
+                smooth
+                to={el.anchor}
+                key={el.id}
+              >
+                {el.name}
+              </MobileMenu.Item>
             ))}
             {props.children}
           </MobileMenu.Items>
@@ -77,9 +92,11 @@ const MobileMenu = {
     border-bottom-right-radius: 10%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
   `,
-  Title: styled.h3`
+  Title: styled(HashLink)`
     padding-left: 2rem;
     font-weight: 600;
+    text-decoration: none;
+    color: ${({ theme }) => theme.text};
   `,
   HamburgerButton: styled.button<MobileProps>`
     transition: 0.5s;
@@ -101,7 +118,7 @@ const MobileMenu = {
       height: 37dvh;
       gap: 1.25rem;
     }
-    @media (max-height: 550px){
+    @media (max-height: 550px) {
       padding-bottom: 3rem;
       gap: 1rem;
     }
@@ -122,15 +139,20 @@ const MobileMenu = {
     @media (min-height: 550px) and (max-height: 796px) {
       gap: 1.25rem;
     }
-    @media (max-height: 550px){
+    @media (max-height: 550px) {
       gap: 1rem;
     }
   `,
-  Item: styled.li`
-    font-weight: 500;
-    font-size: 0.9rem;
-    &:hover {
-      color: #919191;
+  Item: styled(HashLink)`
+    transition: 0.3s;
+    text-decoration: none;
+    font-weight: 600;
+    color: ${({ theme }) => theme.text};
+
+    @media (hover: none) {
+      &:active {
+        color: #919191;
+      }
     }
   `,
   SvgMenuIcon: styled(IoMenu)`
@@ -139,9 +161,7 @@ const MobileMenu = {
     padding-right: 0.5rem;
     width: 2rem;
     height: 2rem;
-    &:hover {
-      color: #919191;
-    }
+    
 
     animation-name: ${SlideInIconsAnimation};
     animation-iteration-count: 1;
