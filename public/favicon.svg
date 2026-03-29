@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Maksim Litvinov">
+  <defs>
+    <linearGradient id="ml-bg" x1="0" y1="0" x2="32" y2="32">
+      <stop offset="0%" stop-color="#363537" />
+      <stop offset="100%" stop-color="#2d2e32" />
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="url(#ml-bg)" />
+  <!-- M -->
+  <path
+    fill="#fafafa"
+    d="M5 24V8h2l4 8 4-8h2v16h-2V11l-4 7-4-7v13H5z"
+  />
+  <!-- L -->
+  <path fill="#fafafa" d="M19 8h2v14h6v2h-8V8z" />
+</svg>

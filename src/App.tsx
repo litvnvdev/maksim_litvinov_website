@@ -1,7 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
-import { BsMoonStarsFill, BsFillSunFill } from "react-icons/bs";
-
 
 import {
   Nav,
@@ -11,42 +9,50 @@ import {
   MobileNav,
   Contact,
   Footer,
+  ThemeToggle,
 } from "./components";
 import { GlobalStyles } from "./styles/GlobalStyles";
 import { lightTheme, darkTheme } from "./styles/Theme";
+import { Theme } from "./shared/types";
+import { MOBILE_WIDTH, THEME_KEY } from "./shared/consts";
 
 function App() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState<Theme>(() => {
+    const stored = localStorage.getItem(THEME_KEY);
+    if (stored === Theme.DARK || stored === Theme.LIGHT) return stored;
+    return Theme.LIGHT;
+  });
 
   const handleTheme = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
+    const newTheme = theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT;
+    localStorage.setItem(THEME_KEY, newTheme);
+    setTheme(newTheme);
   };
 
-  const mobileWidth = window.matchMedia("(max-width:768px)");
-  const size = mobileWidth.matches;
+  const [isMobile, setIsMobile] = useState(
+    () => window.matchMedia(`(max-width:${MOBILE_WIDTH}px)`).matches,
+  );
 
-  const [isMobile, setIsMobile] = useState(size);
-
-  const handleMobileMenu = () => {
-    mobileWidth.addEventListener("change", function (event) {
-      setIsMobile(event.matches);
-    });
-  };
-  handleMobileMenu();
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(`(max-width:${MOBILE_WIDTH}px)`);
+    const sync = (event: MediaQueryListEvent) => setIsMobile(event.matches);
+    setIsMobile(mediaQuery.matches);
+    mediaQuery.addEventListener("change", sync);
+    return () => mediaQuery.removeEventListener("change", sync);
+  }, []);
 
   return (
-    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+    <ThemeProvider theme={theme === Theme.LIGHT ? lightTheme : darkTheme}>
       <>
         {isMobile ? (
           <MobileNav>
-            { theme === 'light' ? <BsMoonStarsFill className="theme-icon" onClick={handleTheme} /> : <BsFillSunFill  className="theme-icon" onClick={handleTheme} />}
+            <ThemeToggle theme={theme} onToggle={handleTheme} />
           </MobileNav>
         ) : (
           <Nav>
-            { theme === 'light' ? <BsMoonStarsFill className="theme-icon" onClick={handleTheme} /> : <BsFillSunFill  className="theme-icon" onClick={handleTheme} />}
+            <ThemeToggle theme={theme} onToggle={handleTheme} />
           </Nav>
         )}
-
         <GlobalStyles />
         <Hero />
         <About />
