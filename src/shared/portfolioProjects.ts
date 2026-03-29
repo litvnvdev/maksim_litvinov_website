@@ -1,13 +1,14 @@
-import preview1 from "../assets/images/mock_img1.jpg";
-import preview2 from "../assets/images/mock_img2.jpg";
-import preview3 from "../assets/images/mock_img3.jpg";
-import preview4 from "../assets/images/mock_img4.jpg";
+// import preview3 from "../assets/images/mock_img3.jpg";
+// import preview4 from "../assets/images/mock_img4.jpg";
+import AppssPreviewImg from "../assets/images/projects/appss_project_preview.jpg";
+import CobuildyPreviewImg from "../assets/images/projects/cobuildy_project_preview.jpg";
 
 /**
  * Portfolio project entry.
  *
- * - team: short line about squad composition (shown on card + modal).
- * - stack: tech labels as chips on the card; same list is repeated in the modal.
+ * - previewSrc: static image on the card (JPG/WebP; keeps LCP light).
+ * - modalSrc: optional larger screenshot in the modal only; otherwise preview is reused.
+ * - team / stack: shown on card + modal.
  */
 export type PortfolioProject = {
   id: string;
@@ -43,7 +44,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       "Telegram WebApp",
       "Mixpanel / PostHog",
     ],
-    previewSrc: preview1,
+    previewSrc: AppssPreviewImg,
     link: "https://engagelabs.org/",
     linkLabel: "Engage Labs — projects",
   },
@@ -65,36 +66,36 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       "i18n",
       "Vite",
     ],
-    previewSrc: preview2,
+    previewSrc: CobuildyPreviewImg,
     link: "https://www.cobuildy.com/",
     linkLabel: "Cobuildy",
   },
-  {
-    id: "internal-ui",
-    title: "Internal UI kit",
-    summary: "15+ reusable components with Storybook docs for product teams.",
-    description:
-      "Shared library used across features: forms, data display, feedback, and layout primitives. Documented interaction states and accessibility patterns for faster feature delivery.",
-    team: "Frontend chapter — consumers across multiple product squads",
-    stack: [
-      "React",
-      "TypeScript",
-      "Storybook",
-      "styled-components",
-      "Tailwind CSS",
-      "Zod",
-    ],
-    previewSrc: preview3,
-  },
-  {
-    id: "sample-gif",
-    title: "Micro-interactions (example)",
-    summary:
-      "Placeholder card — swap preview for a GIF to show motion in the modal.",
-    description:
-      "If you add a GIF (e.g. screen recording), set modalSrc to that file for a looping demo inside the popup. Static screenshots work the same way — both use a regular img element.",
-    team: "Replace with your squad size and roles",
-    stack: ["Framer Motion", "React", "TypeScript", "GIF / video asset"],
-    previewSrc: preview4,
-  },
+  // {
+  //   id: "internal-ui",
+  //   title: "Internal UI kit",
+  //   summary: "15+ reusable components with Storybook docs for product teams.",
+  //   description:
+  //     "Shared library used across features: forms, data display, feedback, and layout primitives. Documented interaction states and accessibility patterns for faster feature delivery.",
+  //   team: "Frontend chapter — consumers across multiple product squads",
+  //   stack: [
+  //     "React",
+  //     "TypeScript",
+  //     "Storybook",
+  //     "styled-components",
+  //     "Tailwind CSS",
+  //     "Zod",
+  //   ],
+  //   previewSrc: preview3,
+  // },
+  // {
+  //   id: "sample-placeholder",
+  //   title: "Micro-interactions (example)",
+  //   summary:
+  //     "Placeholder card — replace preview and copy with your own project.",
+  //   description:
+  //     "Use a sharp screenshot as previewSrc. Optionally set modalSrc to a larger still if the modal should show more detail than the card.",
+  //   team: "Replace with your squad size and roles",
+  //   stack: ["Framer Motion", "React", "TypeScript"],
+  //   previewSrc: preview4,
+  // },
 ];

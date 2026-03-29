@@ -73,6 +73,7 @@ export function PortfolioModal({ project, onClose }: PortfolioModalProps) {
           src={mediaSrc}
           alt={`${project.title.trim()} preview`}
           loading="eager"
+          decoding="async"
         />
         <Body>{project.description}</Body>
         <MetaPanel>

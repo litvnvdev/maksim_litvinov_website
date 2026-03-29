@@ -45,16 +45,21 @@ export const HeroTextBlock = styled.div`
 `;
 
 export const HeroTitleBlock = styled.div`
-  position: relative;
   display: flex;
-  gap: 1rem;
   align-items: center;
+  gap: 0.5rem 0.75rem;
   @media (min-width: 56px) and (max-width: 767px) {
     margin: 0 auto;
+    justify-content: center;
   }
 `;
 
 export const HeroTitle = styled(Title)`
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  font-size: 2.75rem;
+
   @media (min-width: 768px) and (max-width: 1023px) {
     font-size: 2rem;
   }
@@ -153,45 +158,9 @@ export const SocialLink = styled.a`
 `;
 
 export const WavingHand = styled.img`
-  position: absolute;
-  height: 4rem;
-  width: 4rem;
-  top: 4.25rem;
-  right: 9.5rem;
-  @media (min-width: 1024px) and (max-width: 1440px) {
-    width: 3.5rem;
-    height: 3.5rem;
-    top: 3rem;
-    right: 14rem;
-  }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    width: 2.75rem;
-    height: 2.75rem;
-    top: -0.25rem;
-    right: 3.5rem;
-  }
-  @media (min-width: 586px) and (max-width: 767px) {
-    width: 2.5rem;
-    height: 2.5rem;
-    top: -0.15rem;
-    right: -3rem;
-  }
-  @media (min-width: 425px) and (max-width: 585px) {
-    width: 2rem;
-    height: 2rem;
-    top: -0.1rem;
-    right: -2.55rem;
-  }
-  @media (min-width: 375px) and (max-width: 424px) {
-    width: 1.75rem;
-    height: 1.75rem;
-    top: -0.1rem;
-    right: -2rem;
-  }
-  @media (min-width: 56px) and (max-width: 375px) {
-    top: 2.1rem;
-    right: 2rem;
-    width: 1.5rem;
-    height: 1.5rem;
-  }
+  flex-shrink: 0;
+  display: block;
+  width: clamp(1.5rem, 5vw, 3.25rem);
+  height: clamp(1.5rem, 5vw, 3.25rem);
+  align-self: center;
 `;
