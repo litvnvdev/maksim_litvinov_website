@@ -15,6 +15,7 @@ import { GlobalStyles } from "./styles/GlobalStyles";
 import { lightTheme, darkTheme } from "./styles/Theme";
 import { Theme } from "./shared/types";
 import { MOBILE_WIDTH, THEME_KEY } from "./shared/consts";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [theme, setTheme] = useState<Theme>(() => {
@@ -43,6 +44,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme === Theme.LIGHT ? lightTheme : darkTheme}>
+      <Analytics />
       <>
         {isMobile ? (
           <MobileNav>
