@@ -7,6 +7,7 @@ import {
   CardRoot,
   CardShell,
   CardTitle,
+  ContributionList,
   DetailsButton,
   ImageButton,
   MetaBlock,
@@ -25,7 +26,8 @@ type ProjectCardProps = {
 };
 
 const ProjectCard = ({ project, onOpenDetails }: ProjectCardProps) => {
-  const { title, summary, previewSrc, link, linkLabel, team, stack } = project;
+  const { title, summary, previewSrc, link, linkLabel, role, contribution, stack } =
+    project;
 
   return (
     <CardRoot>
@@ -41,10 +43,22 @@ const ProjectCard = ({ project, onOpenDetails }: ProjectCardProps) => {
           <CardTitle>{title.trim()}</CardTitle>
           <Summary>{summary}</Summary>
           <MetaBlock>
-            <MetaRow>
-              <MetaLabel>Team</MetaLabel>
-              <TeamText>{team}</TeamText>
-            </MetaRow>
+            {role && (
+              <MetaRow>
+                <MetaLabel>Role</MetaLabel>
+                <TeamText>{role}</TeamText>
+              </MetaRow>
+            )}
+            {contribution && contribution.length > 0 && (
+              <MetaRow>
+                <MetaLabel>Contribution</MetaLabel>
+                <ContributionList>
+                  {contribution.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ContributionList>
+              </MetaRow>
+            )}
             <MetaRow>
               <MetaLabel>Stack</MetaLabel>
               <StackRow>

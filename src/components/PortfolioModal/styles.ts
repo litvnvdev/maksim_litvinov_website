@@ -129,6 +129,18 @@ export const TeamText = styled.p`
   color: ${({ theme }) => theme.text};
 `;
 
+export const ContributionList = styled.ul`
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: ${({ theme }) => theme.text};
+
+  li + li {
+    margin-top: 0.3rem;
+  }
+`;
+
 export const StackRow = styled.div`
   display: flex;
   flex-wrap: wrap;

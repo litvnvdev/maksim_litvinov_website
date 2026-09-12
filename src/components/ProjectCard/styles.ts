@@ -79,6 +79,36 @@ export const TeamText = styled.p`
   color: ${({ theme }) => theme.text};
 `;
 
+export const ContributionList = styled.ul`
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: ${({ theme }) => theme.text};
+
+  li + li {
+    margin-top: 0.2rem;
+  }
+
+  li {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  li:first-child {
+    -webkit-line-clamp: 2;
+  }
+
+  li:nth-child(2) {
+    -webkit-line-clamp: 1;
+  }
+
+  li:nth-child(n + 3) {
+    display: none;
+  }
+`;
+
 export const StackRow = styled.div`
   display: flex;
   flex-wrap: wrap;
