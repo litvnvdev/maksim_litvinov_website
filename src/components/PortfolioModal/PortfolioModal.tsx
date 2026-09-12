@@ -7,6 +7,7 @@ import type { PortfolioProject } from "../../shared/portfolioProjects";
 import {
   Body,
   CloseButton,
+  ContributionList,
   Dialog,
   ExternalLink,
   Footer,
@@ -77,10 +78,28 @@ export function PortfolioModal({ project, onClose }: PortfolioModalProps) {
         />
         <Body>{project.description}</Body>
         <MetaPanel>
-          <MetaBlock>
-            <MetaLabel>Team</MetaLabel>
-            <TeamText>{project.team}</TeamText>
-          </MetaBlock>
+          {project.role && (
+            <MetaBlock>
+              <MetaLabel>Role</MetaLabel>
+              <TeamText>{project.role}</TeamText>
+            </MetaBlock>
+          )}
+          {project.contribution && project.contribution.length > 0 && (
+            <MetaBlock>
+              <MetaLabel>Contribution</MetaLabel>
+              <ContributionList>
+                {project.contribution.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ContributionList>
+            </MetaBlock>
+          )}
+          {project.team && (
+            <MetaBlock>
+              <MetaLabel>Team</MetaLabel>
+              <TeamText>{project.team}</TeamText>
+            </MetaBlock>
+          )}
           <MetaBlock>
             <MetaLabel>Technical stack</MetaLabel>
             <StackRow>
