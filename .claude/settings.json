@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "ask": ["Bash(git commit:*)", "Bash(git checkout:*)", "Bash(git switch:*)"],
+    "deny": [
+      "Bash(git push:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(git rebase:*)",
+      "Read(./.env)",
+      "Read(./.env.*)"
+    ]
+  },
+  "defaultMode": "plan"
+}
